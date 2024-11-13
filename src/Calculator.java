@@ -17,7 +17,11 @@ public class Calculator<T extends Number> {
         results.remove(0);
     }
 
-
+    public List<T> searchGreaterThan(T number) {
+        return this.results.stream()
+                .filter(result -> result.doubleValue() > number.doubleValue())
+                .toList();
+    }
 
     public void calculate(T firstNumber, T secondNumber, char symbol, boolean isOperateDone) {
         double result = 0;
@@ -46,7 +50,7 @@ public class Calculator<T extends Number> {
             }
             default -> System.out.print("기호는 +,-,*,/ 만 가능합니다.");
         }
-        if(!isOperateDone)
+        if (!isOperateDone)
             return;
 
         results.add((T) Double.valueOf(result));
