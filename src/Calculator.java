@@ -31,7 +31,7 @@ public class Calculator<T extends Number> {
                 .toList();
     }
 
-    public void setNumbersAndOperator(){
+    private void setNumbersAndOperator(){
         System.out.print("첫 번째 숫자를 입력하세요: ");
         this.firstNumber = ((T) Double.valueOf(Reader.readNumber(this.scanner)));
         System.out.print("사칙연산 기호를 입력하세요: ");
