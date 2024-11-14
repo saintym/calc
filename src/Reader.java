@@ -11,21 +11,21 @@ class Reader {
         }
     }
 
-    static char readOperator(Scanner scanner) {
+    static OperatorType readOperator(Scanner scanner) {
         while (true) {
             var operator = scanner.nextLine().charAt(0);
             switch (operator) {
                 case '+' -> {
-                    return '+';
+                    return OperatorType.PLUS;
                 }
                 case '-' -> {
-                    return '-';
+                    return OperatorType.SUBTRACT;
                 }
                 case '*' -> {
-                    return '*';
+                    return OperatorType.MULTIPLY;
                 }
                 case '/' -> {
-                    return '/';
+                    return OperatorType.DIVIDE;
                 }
                 default -> System.out.println("기호는 +,-,*,/ 만 가능합니다. 다시 입력하여 주십시오.");
             }
@@ -52,4 +52,11 @@ enum Keyword {
     EXIT,
     REMOVE,
     GREATER_THAN;
+}
+
+enum OperatorType {
+    PLUS,
+    SUBTRACT,
+    MULTIPLY,
+    DIVIDE
 }
