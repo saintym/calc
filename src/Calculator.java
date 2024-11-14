@@ -42,13 +42,12 @@ public class Calculator<T extends Number> {
             }
             case '/' -> {
                 if (secondNumber.doubleValue() == 0) {
-                    System.out.print("나눗셈에서 분모는 0이 될 수 없습니다.\n");
+                    System.out.println("!! 나눗셈에서 분모는 0이 될 수 없습니다.\n");
                     break;
                 }
                 result = (float) (firstNumber.doubleValue() / secondNumber.doubleValue());
                 isOperateDone = true;
             }
-            default -> System.out.print("기호는 +,-,*,/ 만 가능합니다.");
         }
         if (!isOperateDone)
             return;
